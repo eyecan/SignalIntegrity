@@ -83,7 +83,7 @@ class FrequencyContent(FrequencyDomain):
             Keven=True
             X=CZT(wf.Values(),td.Fs,0,fd.Fe,fd.N,True)
             td=TimeDescriptor(td.H,fd.N*2,fd.Fe*2.)
-        FrequencyDomain.__init__(self,fd,[X[n]/K*\
+        FrequencyDomain.__init__(self,fd,[X[n]/wf.td.K*\
             (1. if (n==0 or ((n==fd.N) and Keven)) else 2.)*\
             cmath.exp(-1j*2.*math.pi*fd[n]*td.H) for n in range(fd.N+1)])
         self.td=td
